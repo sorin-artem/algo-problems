@@ -1,10 +1,16 @@
 def candy(ratings):
-    arr = [1] * len(ratings)
-    for i in range(len(ratings))[1::]:
-        if ratings[i] > ratings[i - 1]:
-            arr[i] = arr[i - 1] + 1
+    res = [1] * len(ratings)
+    for i in range(1, len(ratings)):
+        print(ratings[i])
+        if ratings[i] > ratings[i-1]:
+            res[i] = res[i] + 1
+    print(res)
     for i in range(len(ratings) - 2, -1, -1):
+        print(ratings[i])
         if ratings[i] > ratings[i + 1]:
-            arr[i] = max(arr[i], arr[i + 1] + 1)
-    return sum(arr)
-print(candy([1,0,2]))
+            res[i] = max(res[i], res[i + 1] + 1)
+    print(res)
+    return sum(res)
+
+candy([1,3,2,2,1])
+
