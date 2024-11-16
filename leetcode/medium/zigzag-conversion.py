@@ -30,6 +30,20 @@ def convert(s, numRows):
 
     return res
 
+def convert2(s, numRows):
+    res = ""
+    if numRows == 1:
+        return s
 
-print(convert("AB", 1))
-print(convert("PAYPALISHIRING", 4))
+    zigzag_turn = numRows + numRows - 2
+    for i in range(numRows):
+        for j in range(i, len(s), zigzag_turn):
+            res += s[j]
+            if i > 0 and i < numRows - 1:
+                if j + zigzag_turn - 2 * i < len(s):
+                    res += s[j + zigzag_turn - 2 * i]
+    return res
+
+
+print(convert2("PAYPALISHIRING", 4))
+
