@@ -26,7 +26,7 @@ def fullJustify(words, maxWidth):
 
         line.append(words[i])
         length += len(words[i])
-
+        i += 1
     last_line = " ".join(line)
     extra_spaces = len(maxWidth) - len(last_line)
     res.append(last_line + " " * extra_spaces)
