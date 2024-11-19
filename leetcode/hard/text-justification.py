@@ -25,3 +25,5 @@ def fullJustify(words, maxWidth):
     extra_spaces = maxWidth - len(last_line)
     res.append(last_line + " "*extra_spaces)
     return res
+
+print(fullJustify(["This", "is", "an", "example", "of", "text", "justification."], 16))
