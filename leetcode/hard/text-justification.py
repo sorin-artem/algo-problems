@@ -1,34 +1,27 @@
 def fullJustify(words, maxWidth):
-    res = []
     line = []
     length = 0
+    res = []
+    for i in range(len(words)):
+        if len(words[i]) + length + len(line) > maxWidth:
+            left_space = maxWidth - length
+            extra_spaces = left_space // max(len(line) - 1, 1)
+            remainder = left_space % max(len(line) - 1, 1)
 
-    i = 0
-    while i < len(words):
-        # len(line) means amount of single spaces (" ") because at least one space is required
-        if length + len(line) + len(words[i]) > maxWidth:
-            extra_spaces = maxWidth - length
-
-            # avoid division by 0
-            spaces = extra_spaces // max(1, len(line) - 1)
-            remainder = extra_spaces % max(1, len(line) - 1)
-
-            # -1 avoid space for last word, max to have at least one iteration
-            for j in range(max(1, len(line) - 1)):
-                line[j] += " " * spaces
-                if remainder != 0:
+            for j in range(max(len(line) - 1, 1)):
+                line[j] += " " * extra_spaces
+                if remainder:
                     line[j] += " "
                     remainder -= 1
 
             res.append("".join(line))
-            line = []
-            length = 0
 
+            line =[]
+            length = 0
         line.append(words[i])
         length += len(words[i])
-        i += 1
-    last_line = " ".join(line)
-    extra_spaces = len(maxWidth) - len(last_line)
-    res.append(last_line + " " * extra_spaces)
 
+    last_line = " ".join(line)
+    extra_spaces = maxWidth - len(last_line)
+    res.append(last_line + " "*extra_spaces)
     return res
