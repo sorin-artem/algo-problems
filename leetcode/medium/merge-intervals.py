@@ -1,6 +1,3 @@
-from sys import intern
-
-
 def merge(intervals):
     intervals = sorted(intervals, key=lambda i: i[0])
     res = [intervals[0]]
