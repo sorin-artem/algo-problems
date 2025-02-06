@@ -1,6 +1,6 @@
 from helpers.TreeNode import generate_tree
 
-
+# stack
 def invertTree(root):
     stack = [root]
 
@@ -14,6 +14,17 @@ def invertTree(root):
 
     return root
 
+# recursive
+def invertTree2(root):
+    if not root:
+        return None
+
+    root.left, root.right = root.right, root.left
+
+    invertTree2(root.left)
+    invertTree2(root.right)
+
+    return root
 
 root = generate_tree([4, 2, 7, 1, 3, 6, 9])
-print(invertTree(root))
+print(invertTree2(root))
