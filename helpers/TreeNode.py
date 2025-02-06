@@ -4,7 +4,10 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def list_to_tree(lst):
+    def __str__(self):
+        return f"val={self.val}, left={self.left}, right={self.right}"
+
+def generate_tree(lst):
     if not lst:
         return None
     root = TreeNode(lst[0])

@@ -1,4 +1,4 @@
-from helpers.TreeNode import list_to_tree
+from helpers.TreeNode import generate_tree
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
 #         self.val = val
@@ -21,7 +21,7 @@ def isSameTree(p, q):
 
 
 
-p = list_to_tree([1, 2, 3, 6])
-q = list_to_tree([1, 2, 3, 6])
+p = generate_tree([1, 2, 3, 6])
+q = generate_tree([1, 2, 3, 6])
 
 print(isSameTree(p, q))
