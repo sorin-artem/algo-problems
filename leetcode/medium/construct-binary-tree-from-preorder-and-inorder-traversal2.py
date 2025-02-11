@@ -28,6 +28,7 @@ def buildTree(preorder: List[int], inorder: List[int]):
         mid = mapping[root.val]
         root.left = build(start, mid - 1)
         root.right = build(mid + 1, end)
+        return root
 
     return build(0, len(preorder) - 1)
 
