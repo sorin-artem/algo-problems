@@ -6,15 +6,14 @@ class Solution:
         l = 0
         r = len(nums) - 1
         while l <= r:
-            m = (l + r) // 2
-            left_neighbor = nums[m - 1] if m >= 1 else float("-inf")
-            right_neighbor = nums[m + 1] if m < len(nums) - 1 else float("-inf")
-            if nums[m]>left_neighbor and nums[m] > right_neighbor:
-                return m
-            if right_neighbor > nums[m]:
+            m =  l + ((r - l) // 2)
+            if m < len(nums) - 1 and nums[m] < nums[m + 1]:
                 l = m + 1
-            else:
+            elif m > 0 and nums[m] < nums[m - 1]:
                 r = m - 1
+            else:
+                return m
+
 
 
 print(Solution().findPeakElement([3,4,3,2,1]))
