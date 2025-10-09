@@ -1,0 +1,8 @@
+{
+    "javascript.suggest.enabled": true,
+    "cursor.cpp.disabledLanguages": [
+        "markdown",
+        "plaintext",
+        "javascript"
+    ]
+}
