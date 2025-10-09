@@ -1,8 +1,5 @@
 {
-    "javascript.suggest.enabled": true,
-    "cursor.cpp.disabledLanguages": [
-        "markdown",
-        "plaintext",
-        "javascript"
-    ]
+  "javascript.suggest.enabled": true,
+  "cursor.cpp.disabledLanguages": ["markdown", "plaintext", "javascript"],
+  "editor.formatOnSave": true
 }
